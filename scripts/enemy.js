@@ -1,8 +1,8 @@
 let enemy;
 
-function Player(enemyType, health, damage){
-  this.enemyType;
-this.health;
-this.damage;
+function Enemy(enemyType, health, damage){
+this.enemyType = enemyType;
+this.health = health;
+this.damage = damage;
 
 }

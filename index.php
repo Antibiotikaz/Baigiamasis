@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <script src="scripts/player.js"></script>
     <script src="scripts/gamemanager.js"></script>
+    <script src="scripts/enemy.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
@@ -31,7 +33,7 @@
   <img src="img/druid.jpg" alt="druid">
   <div class="">
     <h3>Druid</h3>
-    <p>It just a druid</p>
+    <p>Druid is nature's child he is strong and have few magics including Bear Pet</p>
   </div>
 </a>
 </div>

@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="js/gamemanager.js"></script>
-    <script src="js/player.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/gamemanager.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
@@ -25,6 +25,13 @@
   <div class="">
     <h3>Archer</h3>
     <p>Archers ar fast and have high stamina and speed witch makes up for their lack in trength and health</p>
+  </div>
+</a>
+<a href="#" onclick="GameManager.setgameStart('Druid')">
+  <img src="img/druid.jpg" alt="druid">
+  <div class="">
+    <h3>Druid</h3>
+    <p>It just a druid</p>
   </div>
 </a>
 </div>

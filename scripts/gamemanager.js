@@ -7,18 +7,19 @@ let GameManager = {
   showHero: function(classType){
     switch (classType) {
       case "Warrior":
-        player = new Player(classType, 200, 15);
+        player = new Player(classType, 200, 15, 0);
         break;
     case "Archer":
-      player = new Player(classType, 100, 20);
+      player = new Player(classType, 100, 20, 0);
       break;
     case "Druid":
-      player = new Player(classType, 150, 8);
+      player = new Player(classType, 150, 8, 0);
       break;
 
     }
     let getInterface = document.querySelector(".interface");
-    getInterface.innerHTML = '<img src="img/' + classType.toLowerCase() + '.jpg" class="img-avatar"><div><h3>' + classType + '</h3><p class="health-player">Health: ' + player.health +'</p><p>Damage: ' + player.damage +'</p></div>';
+    getInterface.innerHTML = '<img src="img/' + classType.toLowerCase() + '.jpg" class="img-avatar"><div><h3>' + classType + '</h3><p class="health-player">Health: ' + player.health +'</p><p>Damage: ' + player.damage +'</p><p class="goldBar">Gold: ' + player.gold +'</p></div>';
+
   },
 
   setPreFight: function(){
@@ -40,8 +41,8 @@ let GameManager = {
 
 
 
-    let enemy00 = new Enemy("Goblin", 50, 5);
-    let enemy01 = new Enemy("Troll", 75, 9);
+    let enemy00 = new Enemy("Goblin", 50, 5, Math.floor(Math.random() * Math.floor(100)));
+    let enemy01 = new Enemy("Troll", 75, 9, Math.floor(Math.random() * Math.floor(100)));
     let chooseEnemy = Math.floor(Math.random() * Math.floor(2));
 
     switch (chooseEnemy) {
@@ -55,7 +56,7 @@ let GameManager = {
 
   getHeader.innerHTML = '<p>Choose your move</p>';
   getAction.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.Attack()">Attack</a>';
-  getEnemy.innerHTML = '<img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" ><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health:' + enemy.health + '</p><p>Damage:' + enemy.damage + '</p></div> ';
+  getEnemy.innerHTML = '<img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" ><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health:' + enemy.health + '</p><p>Damage:' + enemy.damage + '</p><p>goldDrop:' + enemy.goldDrop + '</p></div> ';
 
     },
   Attack: function(){
@@ -72,11 +73,16 @@ let GameManager = {
 
     //When Hero attacks
     let getEnemyHealth =document.querySelector(".health-enemy");
+    let getGoldBar = document.querySelector(".goldBar");
     getEnemyHealth.innerHTML = '<p class="health-enemy">Health:' + enemy.health + '</p>';
     if (enemy.health <= 0)
     {
+      player.gold += enemy.goldDrop;
+
+      getGoldBar.innerHTML = '<p class="goldBar">Gold: ' + player.gold +'</p>';
       getEnemyHealth.innerHTML = '<p class="health-enemy">Health: 0</p>';
       alert("You won hero! You killed poor creature you wanker...");
+
     }
   }
 

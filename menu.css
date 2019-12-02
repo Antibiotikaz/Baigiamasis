@@ -8,8 +8,12 @@
 }
 
 .game-body {
-  background-image: url(img/game.jpg);
+  background: url(img/game.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+
 
 }
 
@@ -31,4 +35,16 @@ a {
 
 a:visited {
   color: red;
+}
+
+.interface {
+  color: red;
+}
+
+.Enemy{
+  color:red;
+}
+
+.vlg-nick {
+  color:red;
 }

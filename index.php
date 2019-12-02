@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+ ?>
 
 
 
@@ -17,26 +20,38 @@
 
   <!-- <button type="submit" name="login" >Enter the Game</button> -->
 
-
 <div class="container">
   <div class="row">
-    <div class="col-3 ">
+    <div class="col-4">
 
     </div>
-
-    <form class="text-center col-6 mt-4" action="index.php" method="post" >
-      <div class="form-group">
-        <label >Username</label>
-        <input type="text" class="form-control" name"username" required>
-      </div>
-      <button type="submit" class="btn btn-primary" name"submit">Login</button>
-    </form>
-    <?php
-    echo $_POST['username'];
-
-     ?>
+    <div class="col-6">
+      <form class="" action="index.php" method="post">
+        <label for="">Username</label>
+        <input type="text" name="username" value="">
+        <button type="submit" name="submit">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
+
+
+
+<?php
+if (empty($_POST['username'])) {
+  echo "<p style='color:red; font-size:46px; text-align: center;'>Enter your username</p>";
+
+
+} else {
+  $_SESSION['user'] = $_POST['username'];
+  echo "<p style='text-align:center;'>";
+  echo $_POST['username']." ".'<a href="game.php ">Enter the game</a>';
+  echo "</p>";
+}
+
+ ?>
+
+
 
 
 

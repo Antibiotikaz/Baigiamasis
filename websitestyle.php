@@ -1,8 +1,5 @@
 <?php
 session_start();
-echo "<h6 style='color: green; font-size:18px; text-align: center;'>";
-echo "Welcome to the Heroes village"." ".$_SESSION['user']."!";
-echo "</h6>";
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -40,38 +37,7 @@ echo "</h6>";
     </ul>
   </div>
 </nav>
-        <div class="interface col-5">
-        <a href="#" onclick="GameManager.setgameStart('Warrior')">
-          <img src="img/warrior.jpg" alt="warrior">
-          <div class="">
-            <h3>Warrior</h3>
-            <p>Warrior have higher health and stamina, however their strength also makes them slower and clumsier</p>
-          </div>
-        </a>
-        <a href="#" onclick="GameManager.setgameStart('Archer')">
-          <img src="img/archer.jpg" alt="archer">
-          <div class="">
-            <h3>Archer</h3>
-            <p>Archers ar fast and have high stamina and speed witch makes up for their lack in trength and health</p>
-          </div>
-        </a>
-        <a href="#" onclick="GameManager.setgameStart('Druid')">
-          <img src="img/druid.jpg" alt="druid">
-          <div class="">
-            <h3>Druid</h3>
-            <p>Druid is nature's child he is strong and have few magics including Bear Pet</p>
-          </div>
-        </a>
-        </div>
-        <div class="Actions col-1">
 
-        </div>
-        <div class="Arena col-1">
-
-        </div>
-        <div class="Enemy col-5">
-
-        </div>
       </div>
     </div>
 

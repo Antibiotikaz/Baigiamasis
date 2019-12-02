@@ -18,16 +18,14 @@ let GameManager = {
 
     }
     let getInterface = document.querySelector(".interface");
-    getInterface.innerHTML = '<img src="img/' + classType.toLowerCase() + '.jpg" class="img-avatar"><div><h3>' + classType + '</h3><p class="health-player">Health: ' + player.health +'</p><p>Damage: ' + player.damage +'</p><p class="goldBar">Gold: ' + player.gold +'</p></div>';
+    getInterface.innerHTML = '<img src="img/' + classType.toLowerCase() + '.jpg" class="img-avatar"><div><h3 class="testas">' + classType + '</h3><p class="health-player">Health: ' + player.health +'</p><p>Damage: ' + player.damage +'</p><p class="goldBar">Gold: ' + player.gold +'</p></div>';
 
   },
 
   setPreFight: function(){
-    let getHeader = document.querySelector(".header");
+
     let getAction = document.querySelector(".Actions");
     let getArena = document.querySelector(".Arena");
-
-    getHeader.innerHTML = '<p>Find an enemy</p>';
     getAction.innerHTML = '<a href="#" onclick="GameManager.setFight()">Search for an enemy</a>';
     getArena.style.visibility = "visible";
 
@@ -35,7 +33,6 @@ let GameManager = {
   },
 
   setFight: function(){
-    let getHeader = document.querySelector(".header");
     let getAction = document.querySelector(".Actions");
     let getEnemy = document.querySelector(".Enemy");
 
@@ -54,9 +51,8 @@ let GameManager = {
         break;
   }
 
-  getHeader.innerHTML = '<p>Choose your move</p>';
   getAction.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.Attack()">Attack</a>';
-  getEnemy.innerHTML = '<img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" ><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health:' + enemy.health + '</p><p>Damage:' + enemy.damage + '</p><p>goldDrop:' + enemy.goldDrop + '</p></div> ';
+  getEnemy.innerHTML = '<img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" ><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health:' + enemy.health + '</p><p>Damage:' + enemy.damage + '</p><p>Gold Drop: 0-100gold</p></div> ';
 
     },
   Attack: function(){
@@ -74,11 +70,11 @@ let GameManager = {
     //When Hero attacks
     let getEnemyHealth =document.querySelector(".health-enemy");
     let getGoldBar = document.querySelector(".goldBar");
+
     getEnemyHealth.innerHTML = '<p class="health-enemy">Health:' + enemy.health + '</p>';
     if (enemy.health <= 0)
     {
       player.gold += enemy.goldDrop;
-
       getGoldBar.innerHTML = '<p class="goldBar">Gold: ' + player.gold +'</p>';
       getEnemyHealth.innerHTML = '<p class="health-enemy">Health: 0</p>';
       alert("You won hero! You killed poor creature you wanker...");

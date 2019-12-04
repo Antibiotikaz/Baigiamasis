@@ -2,7 +2,6 @@
 include 'websitestyle.php';
 include 'PHP/db.php';
 include_once 'PHP/enemy.php';
-
  ?>
 
 

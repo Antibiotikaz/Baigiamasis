@@ -44,7 +44,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     exit();
   }
   else {
-    $sql = "INSERT INTO player (username, password, class, level, gold, health, damage) VALUES (?, ?, ?, 1, 10, 100, 5)";
+    $sql = "INSERT INTO player (username, password, class, level, gold, health, damage, exp) VALUES (?, ?, ?, 1, 10, 100, 5, 0)";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
       header("Location: index.php?error=sqlerror");

@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'PHP/character.php';
 echo "This page is under maintance";
 
  ?>
@@ -10,5 +12,10 @@ echo "This page is under maintance";
   </head>
   <body>
     <a href="game.php">Back to game</a>
+
+    <?php
+    echo $_SESSION['damage'];
+
+     ?>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 echo "<h6 style='color: green; font-size:18px; text-align: center;'>";
-echo "Welcome to the Heroes village"." ".$_SESSION['user']."!";
+echo "Welcome to the Heroes village"." ".$_SESSION['username']."!";
 echo "</h6>";
  ?>
 <!DOCTYPE html>

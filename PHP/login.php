@@ -49,7 +49,7 @@ else {
         $_SESSION['class'] = $row['class'];
         $_SESSION['health'] = $row['health'];
         $_SESSION['damage'] = $row['damage'];
-        header("Location: game.php?login=succes");
+        header("Location: village.php?login=succes");
         exit();
     }else {
       header("Location: index.php?error=wrongpassword");

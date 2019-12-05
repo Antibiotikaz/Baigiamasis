@@ -15,9 +15,7 @@ if (isset($_POST['search'])) {
       break;
   }
   echo '<img src="img/'.strtolower($enemy->enemyType).'.jpg" ><div><h3 class="enemy-stats">'.$enemy->enemyType.'</h3><p class="enemy-stats">Health:'.$enemy->health.'</p><p class="enemy-stats">Damage:'.$enemy->damage.'</p><p class="enemy-stats">Gold Drop: 0-100gold</p></div> ';
-  echo '<form class="" action="village.php" method="post">
-    <button type="submit" name="attack">Attack</button>
-  </form>';
+  
   $_SESSION['enemyType'] = $enemy->enemyType;
   $_SESSION['enemyhealth'] = $enemy->health;
   $_SESSION['enemydamage'] = $enemy->damage;

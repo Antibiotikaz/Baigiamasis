@@ -1,14 +1,3 @@
-<form class="" action="index.php" method="post">
-  <label for="">Username</label>
-  <input type="text" name="username" value="" required>
-  <br>
-  <label for="">Password</label>
-  <input type="password" name="password" value="" required>
-  <br>
-  <button type="submit" name="login">Login</button>
-
-</form>
-
 
 <?php
 

@@ -21,7 +21,7 @@ echo '</strong>';
       if ($_SESSION['enemyhealth'] <= 0) {
         $_SESSION['exp'] =   $_SESSION['exp'] + $_SESSION['enemyExp'];
         $_SESSION['gold'] =   $_SESSION['gold'] + $_SESSION['goldDrop'];
-        
+
         echo '<strong class="battlestasts">';
         echo "You gained +". $_SESSION['enemyExp']." EXP +"." ".$_SESSION['goldDrop']. "gold";
         echo '</strong>';
@@ -38,7 +38,7 @@ echo '</strong>';
           echo '</strong>';
         }
         echo '<img class="enemy-avatar" src="img/'.strtolower($_SESSION["enemyType"]).'.jpg" ><div><h3 class="enemy-stats">'.$_SESSION["enemyType"].'</h3><p class="enemy-stats">Health:0</p><p class="enemy-stats">Damage:'.$_SESSION["enemydamage"].'</p><p class="enemy-stats">Gold Drop: 0-100gold</p></div> ';
-
+        echo '<button id="" type="submit" name="village"><a href="village.php">Go to village</a></button>';
       }
     }
 

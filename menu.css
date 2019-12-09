@@ -17,9 +17,7 @@
 
 }
 
-img {
-  width: 160px;
-}
+
 
 .index-header {
   font-family: 'Fondamento', cursive;
@@ -59,4 +57,15 @@ a:visited {
 }
 .market-img {
   width: 500px;
+}
+
+.reg-btn {
+  color:white;
+}
+
+.avatar {
+  width: 160px;
+}
+.enemy-avatar {
+  width: 160px;
 }

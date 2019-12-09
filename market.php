@@ -1,28 +1,29 @@
 <?php
 include 'websitestyle.php';
 
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
+
     <title></title>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $(document).ready(function(){
-        $("#bbz").click(function(){
-          $("test").load("PHP/testas.php");
+        $("#button").click(function(){
+          $("GoldBar").load("PHP/testas.php");
         });
       });
-    </script>
+    </script> -->
   </head>
   <body>
 
     <strong>  Marketplace</strong>
-    <strong>  Gold <?php echo $_SESSION['gold']; ?></strong>
+    <div id="GoldBar">
+      <strong>  Gold <?php echo $_SESSION['gold']; ?></strong>
+    </div>
+<!-- <p id="response" class="battlestasts">1</p> -->
     <br>
   <img src="img/market.jpg" alt="" class="market-img">
     <form class="" action="market.php" method="post">
@@ -30,16 +31,31 @@ include 'websitestyle.php';
         <option value="healthS">Health Potion Small(25Gold)</option>
         <option value="healthL">Health Potion Large(75Gold)</option>
       </select>
-      <button  type="submit" name="buy">Buy</button>
+      <button id="button-buy" name="buy">Buy</button>
     </form>
 
-<div id="test">
-  <p>Test text</p>
-</div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('#button-buy').click(function(){
 
-<button id="bbz" type="button" name="button">Test</button>
+      let data = {
+        market: jQuery('select[name="market"]').val()
+      };
 
-<?php include 'PHP/market-health.php'; ?>
+      jQuery.post('PHP/testas.php', data, function(response){
+            jQuery("GoldBar").load("PHP/testas.php");
+
+      });
+    });
+  });
+</script>
+<?php include 'PHP/market-health.php' ?>
+
+
   </body>
 
 </html>

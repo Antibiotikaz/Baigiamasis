@@ -1,11 +1,11 @@
 <?php
-include 'PHP/db.php';
+include 'db.php';
 if (isset($_POST['buy'])) {
   if ($_SESSION['gold'] <= 0) {
     echo '<strong class="battlestasts">';
       echo "Insufficient Funds! Need more gold hero";
     echo "</strong>";
-    $_SESSION['gold'] = 0;
+
     return;
   }
   switch ($_POST['market']) {
@@ -38,7 +38,6 @@ if (isset($_POST['buy'])) {
 
 
   }
-  $_SESSION['gold'] = 0;
   $sql = "UPDATE player SET health = ?, gold = ? WHERE id=? ";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {

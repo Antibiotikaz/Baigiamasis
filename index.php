@@ -84,19 +84,11 @@ include_once 'PHP/login.php';
 
      <div class="container text-center">
        <form class="" action="index.php" method="post">
-         <button id="reg" type="submit" name="reg" class="btn btn-primary">Register</button>
+         <button id="reg" type="submit" name="reg" class="btn btn-primary"><a class="reg-btn" href="registration.php">Register</a></button>
        </form>
-      <?php if (isset($_POST['reg'])) {
-        include 'PHP/register.php';
-      } ?>
 
      </div>
-     <div id="placement">
 
-     </div>
-<script src="scripts/ajax.js">
-
-</script>
 
 
 
